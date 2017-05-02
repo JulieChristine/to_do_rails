@@ -18,6 +18,9 @@ source 'https://rubygems.org'
     gem 'pry'
     gem 'shoulda-matchers'
     gem 'capybara'
+    gem 'factory_girl_rails'
+    gem 'simplecov', require: false
+    gem "letter_opener"
   end
 
   group :development do
