@@ -2,10 +2,10 @@
 
 <h1><%= @task.name %></h1>
 
-<p><%= link_to "Edit", edit_list_task_path(@task) %></p>
-<p><%= link_to "Delete", task_path(@task),
+<p><%= link_to "Edit", edit_list_task_path(@task), class: "btn btn-default" %></p>
+<p><%= link_to "Delete", task_path(@task), class: "btn btn-default",
       :data => {:confirm => "You sure?",
       :method => "delete"} %></p>
 
 
-  <p><%= link_to "Return to lists", lists_path %></p>
+  <p><%= link_to "Return to lists", lists_path, class: "btn btn-default" %></p>

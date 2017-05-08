@@ -14,11 +14,15 @@ class TasksController < ApplicationController
     @list = List.find(params[:list_id])
     @task = @list.tasks.new(task_params)
     if @task.save
-      redirect_to list_path(@task.list)
-    else
-      render :new
+      flash[:notice] = "Task successfully added!"
+        respond_to do |format|
+          format.html { redirect_to list_path(@task.list) }
+          format.js
+        end
+      else
+        render :new
+      end
     end
-  end
 
   def edit
     @list = List.find(params[:list_id])
